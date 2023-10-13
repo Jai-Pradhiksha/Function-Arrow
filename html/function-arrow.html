@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Functions and Arrow Functions</title>
+</head>
+<body>
+  <h1>JavaScript Functions and Arrow Functions</h1>
+
+  <script>
+    // 1. Function Declaration
+    function add(a, b) {
+      return a + b;
+    }
+
+    // 2. Function Expression
+    const subtract = function(a, b) {
+      return a - b;
+    };
+
+    // 3. Arrow Function
+    const multiply = (a, b) => a * b;
+
+    // 4. Default Parameter Values
+    function greet(name = "Guest") {
+      return `Hello, ${name}!`;
+    }
+
+    // 5. Rest Parameter
+    function sum(...numbers) {
+      return numbers.reduce((acc, num) => acc + num, 0);
+    }
+
+    // 6. Function with Callback
+    function performAction(action, callback) {
+      console.log(`Performing ${action}`);
+      callback();
+    }
+
+    function onActionComplete() {
+      console.log("Action completed");
+    }
+
+    performAction("task", onActionComplete);
+
+    // 7. Named Function Expression
+    const factorial = function calculateFactorial(n) {
+      if (n <= 1) {
+        return 1;
+      }
+      return n * calculateFactorial(n - 1);
+    };
+
+    console.log("Factorial of 5:", factorial(5));
+
+    // 8. Immediately Invoked Function Expression (IIFE)
+    (function() {
+      console.log("I am an IIFE!");
+    })();
+
+    // 9. Function as Object Method
+    const person = {
+      name: "John",
+      greet: function() {
+        return `Hello, ${this.name}!`;
+      }
+    };
+
+    console.log(person.greet());
+  </script>
+</body>
+</html>
